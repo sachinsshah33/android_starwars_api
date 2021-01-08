@@ -1,4 +1,4 @@
-package extension.domain.androidstarwarsapi.activities
+package extension.domain.androidstarwarsapi.activities.main
 
 import android.view.LayoutInflater
 import android.view.View
@@ -22,7 +22,7 @@ class PeoplePaginatedAdapter(val onItemSelected: ((PeopleModel?) -> Unit)? = nul
                 oldItem == newItem
         }
     }
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) : ViewHolder{
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) : ViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
         val view = layoutInflater.inflate(R.layout.person_item, parent, false)
         return ViewHolder(view)

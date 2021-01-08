@@ -1,17 +1,18 @@
 package extension.domain.androidstarwarsapi
 
+import extension.domain.androidstarwarsapi.extensions.getDateInReadableString
 import org.junit.Test
 
 import org.junit.Assert.*
+import java.text.SimpleDateFormat
+import java.util.*
 
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * See [testing documentation](http://d.android.com/tools/testing).
- */
 class ExampleUnitTest {
     @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
+    fun stringToReadableDate_isCorrect() {
+        val dateString = "2014-12-10T16:20:44.310000Z"
+        val date = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.mmmSSS'Z'", Locale.getDefault()).parse(dateString)
+        val readableDateString = date.getDateInReadableString() + " @ " + date.getDateInReadableString()
+        assertEquals("Wed 10th Dec 2014 @ Wed 10th Dec 2014", readableDateString)
     }
 }

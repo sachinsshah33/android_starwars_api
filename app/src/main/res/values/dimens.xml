@@ -1,0 +1,5 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <dimen name="text_size">18sp</dimen>
+    <dimen name="screen_margin">20dp</dimen>
+
+</resources>

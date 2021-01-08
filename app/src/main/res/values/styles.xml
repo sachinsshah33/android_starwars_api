@@ -1,6 +1,6 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -9,11 +9,14 @@
 
 
 
-    <style name="LabelText" parent="AppTheme">
-        <item name="android:textColor">@color/labelText</item>
-        <item name="android:layout_marginEnd">4dp</item>
+    <style name="StandardText" parent="AppTheme">
+        <item name="android:textSize">@dimen/text_size</item>
     </style>
-    <style name="DataText" parent="AppTheme">
+    <style name="LabelText" parent="StandardText">
+        <item name="android:textColor">@color/labelText</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="DataText" parent="StandardText">
         <item name="android:textColor">@color/dataValueText</item>
     </style>
 

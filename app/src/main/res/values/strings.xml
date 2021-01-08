@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">AndroidStarWarsAPI</string>
 
+    <string name="empty_message">No results\nPlease check your internet connection\nand tap the \'Try Again\' button below</string>
+    <string name="try_again_content_description">Try Again</string>
+
+
+    <string name="main_title">Star Wars Characters</string>
     <string name="details_title">Details</string>
 
     <string name="name_header">Name:</string>

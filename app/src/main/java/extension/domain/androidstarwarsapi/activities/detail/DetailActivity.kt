@@ -1,4 +1,4 @@
-package extension.domain.androidstarwarsapi.activities
+package extension.domain.androidstarwarsapi.activities.detail
 
 import android.os.Bundle
 import android.view.KeyEvent

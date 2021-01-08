@@ -4,8 +4,7 @@ import androidx.paging.ExperimentalPagingApi
 import androidx.paging.PagingSource
 import extension.domain.androidstarwarsapi.App
 import extension.domain.androidstarwarsapi.Constants
-import extension.domain.androidstarwarsapi.activities.DetailActivity
-import extension.domain.androidstarwarsapi.activities.MainActivity
+import extension.domain.androidstarwarsapi.activities.main.MainActivity
 import extension.domain.androidstarwarsapi.data.network.APIService
 import retrofit2.HttpException
 import java.io.IOException

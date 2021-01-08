@@ -97,17 +97,17 @@ class PeopleRepo() {
             .subscribe ({ result ->
                 when {
                     result.body()?.results==null -> {
-                        "error"
+                        //"error"
                     }
                     result.body()!!.results!!.isEmpty() -> {
-                        "end"
+                        //"end"
                     }
                     else -> {
                         insert(models = result.body()!!.results!!)
                     }
                 }
             }, { error ->
-                "error"
+                //"error"
                 error.printStackTrace()
             })
         return response

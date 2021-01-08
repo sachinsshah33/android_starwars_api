@@ -1,4 +1,4 @@
-package extension.domain.androidstarwarsapi.activities
+package extension.domain.androidstarwarsapi.activities.main
 
 import android.graphics.Canvas
 import android.graphics.drawable.Drawable

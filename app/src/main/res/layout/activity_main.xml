@@ -4,25 +4,63 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MainActivity"
+    tools:context=".activities.main.MainActivity"
     android:background="@color/background">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/empty_screen_message"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/screen_margin"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/logo"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/empty_message"
+                android:gravity="center"
+                android:textSize="14dp"
+                android:textColor="@color/listItemText"/>
+        </LinearLayout>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/peopleRecyclerView"
+        android:id="@+id/people_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:scrollbars="vertical"
-        tools:listitem="@layout/person_item"/>
+        tools:listitem="@layout/person_item"
+        tools:visibility="gone"/>
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/refresh_fab"
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/try_again_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        app:icon="@android:drawable/ic_delete"
+        app:icon="@drawable/ic_baseline_refresh_24"
+        app:backgroundTint="@color/labelText"
+        app:iconTint="@color/background"
+        android:contentDescription="@string/try_again_content_description"
         app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
         android:visibility="gone"
         tools:visibility="visible"/>

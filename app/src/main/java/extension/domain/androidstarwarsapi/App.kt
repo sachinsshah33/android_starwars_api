@@ -5,7 +5,7 @@ import android.app.Application
 import android.content.Context
 import android.os.Bundle
 import androidx.paging.ExperimentalPagingApi
-import extension.domain.androidstarwarsapi.activities.MainActivity
+import extension.domain.androidstarwarsapi.activities.main.MainActivity
 import java.lang.ref.WeakReference
 
 @ExperimentalPagingApi
@@ -21,11 +21,7 @@ class App : Application() {
         lateinit var AppContext: Context
 
         val getCurrentActivity: Activity? get() = currentActivity?.get()
-        val getMainActivity: Activity? get() = mainActivity?.get()
 
-        //val getIMain: IMainFunctions? get() = driverMainActivity?.get()?.getIMain
-
-        val isAppContextInitialized: Boolean get() = ::AppContext.isInitialized
     }
 
     override fun onCreate() {
