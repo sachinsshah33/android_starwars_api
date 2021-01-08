@@ -1,5 +1,6 @@
 package extension.domain.androidstarwarsapi.data.network
 
+import androidx.paging.ExperimentalPagingApi
 import extension.domain.androidstarwarsapi.App
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -7,6 +8,7 @@ import java.security.KeyManagementException
 import java.security.NoSuchAlgorithmException
 import java.util.concurrent.TimeUnit
 
+@ExperimentalPagingApi
 object Worker {
     private var mClient: OkHttpClient? = null
     val client: OkHttpClient

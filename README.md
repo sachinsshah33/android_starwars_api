@@ -6,6 +6,7 @@ Maybe use Glide if needing to load any images via URL.
 
 If I had more time I'd:
     Add more Unit tests
+    Implement Dagger/Hilt depending on how big the project gets
     Allow user to filter/search/orderBy___
     Implement Firebase Crashlytics
     Implement multiple languages
@@ -17,5 +18,5 @@ If I had more time I'd:
         Extend to other popular movies/things
         Have some sort of paid feature available to logged in users
 
-
-
+References:
+https://medium.com/swlh/paging3-recyclerview-pagination-made-easy-333c7dfa8797

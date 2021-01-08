@@ -4,8 +4,11 @@ import android.app.Activity
 import android.app.Application
 import android.content.Context
 import android.os.Bundle
+import androidx.paging.ExperimentalPagingApi
+import extension.domain.androidstarwarsapi.activities.MainActivity
 import java.lang.ref.WeakReference
 
+@ExperimentalPagingApi
 class App : Application() {
 
     companion object {

@@ -1,5 +1,6 @@
 package extension.domain.androidstarwarsapi.data.network
 
+import androidx.paging.ExperimentalPagingApi
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import extension.domain.androidstarwarsapi.data.models.PeopleAPIModel
@@ -9,9 +10,14 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
 import java.util.*
 
+@ExperimentalPagingApi
 interface APIService{
     @GET("api/{path}/")
     fun people(@Path("path") id: String = "people", @Query("page") page: Int = 1): io.reactivex.Observable<Response<PeopleAPIModel>>
+
+    @GET("api/{path}/")
+    suspend fun peoplePaginated(@Path("path") id: String = "people", @Query("page") page: Int = 1): PeopleAPIModel
+
 
     companion object{
         operator fun invoke() : APIService{

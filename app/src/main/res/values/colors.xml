@@ -3,4 +3,11 @@
     <color name="colorPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+
+    <color name="background">#222222</color>
+    <color name="listItemText">#FFFFFF</color>
+    <color name="labelText">#DDBB00</color>
+    <color name="dataValueText">#FFFFFF</color>
+
 </resources>

@@ -25,7 +25,7 @@ data class PeopleAPIModel(
 
     @SerializedName("results")
     @Expose
-    var results: ArrayList<PeopleModel>? = null
+    var results: ArrayList<PeopleModel> = ArrayList()
 ) : Parcelable {
 
 }

@@ -3,20 +3,20 @@ package extension.domain.androidstarwarsapi.data.people
 import android.annotation.SuppressLint
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.paging.Pager
-import androidx.paging.PagingConfig
-import androidx.paging.PagingData
-import androidx.paging.PagingSource
+import androidx.paging.*
+import androidx.paging.rxjava2.observable
 import extension.domain.androidstarwarsapi.App
 import extension.domain.androidstarwarsapi.Constants
 import extension.domain.androidstarwarsapi.data.local.AppDatabase
 import extension.domain.androidstarwarsapi.data.models.PeopleModel
+import extension.domain.androidstarwarsapi.data.models.PeoplePagingSource
 import extension.domain.androidstarwarsapi.data.network.APIService
+import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.map
 
+@ExperimentalPagingApi
 class PeopleRepo() {
     private var dao: PeopleDAO? = null
 
@@ -76,9 +76,16 @@ class PeopleRepo() {
         return dao!!.getPeopleFromLocalPaginated()
     }
     fun getPeopleFromLocalPaginated(): Flow<PagingData<PeopleModel>> {
-        return Pager(config = PagingConfig(pageSize = Constants.pagedSize, enablePlaceholders = false), pagingSourceFactory = { getPeopleFromLocalPaginatedFlow() }).flow
+        return Pager(config = PagingConfig(pageSize = Constants.DEFAULT_PAGE_SIZE, enablePlaceholders = false), pagingSourceFactory = { getPeopleFromLocalPaginatedFlow() }).flow
     }
 
+
+    fun getPeopleFromCloudPaginated(pagingConfig: PagingConfig = PagingConfig(pageSize = Constants.DEFAULT_PAGE_SIZE, enablePlaceholders = true)): Observable<PagingData<PeopleModel>> {
+        return Pager(
+            config = pagingConfig,
+            pagingSourceFactory = { PeoplePagingSource() }
+        ).observable
+    }
 
 
     @SuppressLint("CheckResult")

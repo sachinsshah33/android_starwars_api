@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">AndroidStarwarsAPI</string>
+    <string name="app_name">AndroidStarWarsAPI</string>
+
+    <string name="details_title">Details</string>
+
+    <string name="name_header">Name:</string>
+    <string name="height_header">Height:</string>
+    <string name="mass_header">Mass:</string>
+    <string name="data_record_created_header">Data record created:</string>
+    <string name="data_record_created_value">%1$s @ %2$s</string>
+
 </resources>
